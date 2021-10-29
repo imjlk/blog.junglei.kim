@@ -22,11 +22,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: Build frontity project
-        run: npx frontity build
       # Delete files...
       - name: Delete files
       - run: |
+          npx frontity build
           mkdir /tmp/frontity
           mv ./static/ /tmp/frontity/
           mv server.js /tmp/frontity
