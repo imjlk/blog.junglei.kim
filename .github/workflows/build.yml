@@ -21,11 +21,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Delete files
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name imjlk
+          git config user.email i@m.junglei.kim
           git branch build
           git checkout build
           npm i
