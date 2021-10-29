@@ -25,6 +25,7 @@ jobs:
       
       - name: Delete files
         run: |
+          npm i
           npx frontity build
           mkdir /tmp/frontity
           mv ./static/ /tmp/frontity/
