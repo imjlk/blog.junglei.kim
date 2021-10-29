@@ -31,6 +31,7 @@ jobs:
       - name: Build frontity project
         run: npx frontity build
 
+      # Delete files...
       - name: Delete files
       - run: |
           mkdir /tmp/frontity
