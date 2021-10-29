@@ -40,8 +40,6 @@ jobs:
           mv /tmp/frontity/static ./
           git add .
           git commit -m "build"
-        with:
-          ref: build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Push commit
