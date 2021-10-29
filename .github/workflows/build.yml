@@ -26,10 +26,12 @@ jobs:
       - name: Delete files
         run: |
           npm i
+          cd packages/material-ui && npm i
+          cd ../../
           npx frontity build
           mkdir /tmp/frontity
-          mv ./static/ /tmp/frontity/
-          mv server.js /tmp/frontity
+          mv ./build/static/ /tmp/frontity/
+          mv ./build/server.js /tmp/frontity
           rm -rf ./*
           mv /tmp/frontity/server.js ./
           mv /tmp/frontity/static ./
