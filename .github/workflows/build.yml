@@ -25,6 +25,10 @@ jobs:
       
       - name: Delete files
         run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git branch build
+          git checkout build
           npm i
           cd packages/material-ui && npm i
           cd ../../
@@ -35,10 +39,6 @@ jobs:
           rm -rf ./*
           mv /tmp/frontity/server.js ./
           mv /tmp/frontity/static ./
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git branch build
-          git checkout build
           git add .
           git commit -m "build"
           git push
