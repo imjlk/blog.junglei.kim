@@ -21,8 +21,6 @@ const Root = ({ state }) => {
         <Link link="/material-demo">Material Demo</Link>
         <br />
         <Link link="/material-tabs">Material Demo</Link>
-        <br />
-        <Link link="#">TEST</Link>
       </nav>
       <hr />
       <main>
