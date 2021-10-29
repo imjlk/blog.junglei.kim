@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,4 +40,13 @@ jobs:
           mv /tmp/frontity/static ./
           git add .
           git commit -m "build"
-          git push
+        with:
+          ref: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push commit
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: "build"
+          force: true
