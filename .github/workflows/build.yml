@@ -33,9 +33,11 @@ jobs:
           cd ../../
           npx frontity build
           mkdir /tmp/frontity
-          mv ./build/ /tmp/frontity/
+          mv ./build/static/ /tmp/frontity/
+          mv ./build/server.js /tmp/frontity
           rm -rf ./*
-          mv /tmp/frontity/build ./
+          mv /tmp/frontity/server.js ./
+          mv /tmp/frontity/static ./
           git add .
           git commit -m "build"
         env:
