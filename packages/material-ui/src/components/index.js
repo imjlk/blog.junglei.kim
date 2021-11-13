@@ -15,37 +15,92 @@ const Root = ({ state }) => {
   // const { state } = useConnect(Packages);
   const data = state.source.get(state.router.link)
 
-
   return (
     <>
       <Global
         styles={css`
           @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
-
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
           html {
             font-family: 'Noto Sans KR', sans-serif;
           }
         `}
       />
-      <h1>Blog</h1>
-      <p>Current URL: {state.router.link}</p>
-      <nav>
-        <Link link="/">Home</Link>
-        <br />
-        <Link link="/about-us">About Us</Link>
-      </nav>
-      <hr />
-      <main>
+      <Header>
+        <HeaderContent>
+          <h1>Blog</h1>
+          <p>Current URL: {state.router.link}</p>
+          <Menu>
+            <Link link="/">Home</Link>
+            <br />
+            <Link link="/about-us">About Us</Link>
+          </Menu>
+        </HeaderContent>
+      </Header>
+      <Main>
         <Switch>
           <List when={data.isArchive} />
           <Post when={data.isPost} />
           <Page when={data.isPage} />
         </Switch>
-      </main>
+      </Main>
     </>
   )
 }
 
 export default connect(Root)
 
-const Header = styled.header`  background-color: #e5edee;`
+const Header = styled.header`
+  background-color: #e5edee;
+  border-width: 0 0 8px 0;
+  border-style: solid;
+  border-color: maroon;
+
+  h1 {
+    color: #4a4a4a;
+  }
+`
+const HeaderContent = styled.div`
+  max-width: 800px;
+  padding: 2em 1em;
+  margin: auto;
+`
+const Main = styled.main`
+  max-width: 800px;
+  padding: 1em;
+  margin: auto;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h2 {
+    margin: 0.5em 0;
+  }
+  p {
+    line-height: 1.25em;
+    margin-bottom: 0.75em;
+  }
+  figure {
+    margin: 0;
+  }
+  figcaption {
+    color: #828282;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+  }
+`
+const Menu = styled.nav`
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  & > a {
+    margin-right: 1em;
+    color: steelblue;
+    text-decoration: none;
+  }
+`
