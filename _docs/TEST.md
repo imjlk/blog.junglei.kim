@@ -1,7 +1,7 @@
 ---
 title: TEST
 taxonomy:
-  category: 
+  category:
     - test
   post_tag:
     - test-new
