@@ -1,10 +1,10 @@
 ---
 title: TEST
 taxonomy:
-	category: 
-		- test
-	post_tag:
-		- test-new
+  category: 
+    - test
+  post_tag:
+    - test-new
 ---
 
 ## Test
