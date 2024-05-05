@@ -32,9 +32,6 @@ const articleDate = pubDate.toISOString()
 					<p class='text-center text-sm text-opacity-50'>
 						Published <FormattedDate date={pubDate} />
 					</p>
-					<p class='text-center text-sm text-opacity-50 font-bold'>
-						- {readTime}
-					</p>
 				</div>
 				<h1 class='text-center text-4xl md:text-6xl md:pb-2.5 font-semibold'>
 					{title}
@@ -42,7 +39,7 @@ const articleDate = pubDate.toISOString()
 			</div>
 
 			<div class='flex flex-wrap justify-center items-center gap-2 gap-y-4 md:gap-5'>
-				{tags.map((tag) => <Tag tag={tag} />)}
+				{tags.map((tag: string) => <Tag tag={tag} />)}
 			</div>
 		</header>
 
