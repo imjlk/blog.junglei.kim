@@ -8,7 +8,6 @@ export default defineConfig({
 	branch,
 	clientId: null, // Get this from tina.io
 	token: null, // Get this from tina.io
-
 	build: {
 		outputFolder: 'admin',
 		publicFolder: 'public'
@@ -34,7 +33,6 @@ export default defineConfig({
 						name: 'heroImage',
 						description: 'The image used for the cover of the post'
 					},
-
 					{
 						type: 'string',
 						required: true,
@@ -46,7 +44,7 @@ export default defineConfig({
 					{
 						type: 'string',
 						label: 'description',
-						required: true,
+						required: false,
 						name: 'description',
 						description: 'A short description of the post'
 					},
