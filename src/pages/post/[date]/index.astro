@@ -1,0 +1,22 @@
+---
+export const prerender = false
+
+import BaseLayout from '@/layouts/BaseLayout'
+import ListPosts from '@/components/ListPosts'
+import TitlePage from '@/components/TitlePage'
+import { getPostsByDate } from '@/utils'
+
+const { date } = Astro.params
+
+if (date === undefined) {
+	Astro.redirect('/')
+}
+
+const posts = await getPostsByDate(date!)
+// const posts = await getPostByTag(tag)
+---
+
+<BaseLayout title={date}>
+	<TitlePage title={date} />
+	<ListPosts posts={posts} />
+</BaseLayout>
