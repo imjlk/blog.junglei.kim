@@ -11,7 +11,7 @@ import SearchIcon from '@/components/icons/SearchIcon'
 		<!-- <span class='md:hidden text-2xl'> Search</span> -->
 	</button>
 	<dialog
-		aria-label='search'
+		aria-label='검색하기'
 		class='h-full max-h-full w-full max-w-full border border-zinc-400 bg-white dark:bg-[#0a0910ec] shadow backdrop:backdrop-blur sm:mx-auto sm:mb-auto sm:mt-16 sm:h-max sm:max-h-[calc(100%-8rem)] sm:min-h-[15rem] sm:w-5/6 sm:max-w-[48rem] sm:rounded-md opacity-0'
 	>
 		<div class='dialog-frame flex flex-col gap-4 p-6 pt-12 sm:pt-6'>
@@ -106,7 +106,22 @@ import SearchIcon from '@/components/icons/SearchIcon'
 						element: '#pagefind__search',
 						baseUrl: import.meta.env.BASE_URL,
 						bundlePath: import.meta.env.BASE_URL.replace(/\/$/, '') + '/pagefind/',
-						showImages: false
+						showImages: false,
+						translations: {
+							// close: "닫기",
+							placeholder: '검색하기',
+							clear_search: 'Clear',
+							load_more: '더 보기',
+							search_label: '이 사이트에서 검색하기',
+							filters_label: '필터',
+							zero_results: '검색어 - [SEARCH_TERM] 검색 결과가 없습니다.',
+							many_results: '검색어 - [SEARCH_TERM] 검색 결과: [COUNT]개',
+							one_result: '검색어 - [SEARCH_TERM] 검색 결과: [COUNT]개',
+							alt_search:
+								'검색어 - [SEARCH_TERM] 검색 결과가 없습니다. 대신 [DIFFERENT_TERM] 이러한 검색어는 어떠신가요?',
+							search_suggestion: 'No results for [SEARCH_TERM]. Try one of the following searches:',
+							searching: '검색어 - [SEARCH_TERM] 검색 중...'
+						}
 					})
 				})
 			})
